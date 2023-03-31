@@ -1,36 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import DisabledCard from '../components/DisabledCard.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="type.suzume.dev">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		<h1>type.suzume.dev</h1>
+
+		<h2>えのころ</h2>
+		<p class="par">
+			<strong>えのころ</strong>は、<a href="https://github.com/adobe-fonts/source-han-sans/blob/master/README-JP.md">源ノ角ゴシック</a>、<a href="https://github.com/adobe-fonts/source-han-serif/blob/master/README-JP.md">源ノ明朝</a>をベースに、高度なタイポグラフィ機能を持たないアプリケーションでも、プロポーショナルメトリクスや縦書きを利用するためのフォントです。
+			オリジナルと同様、各7ウェイトを提供しています。
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				href="https://s-suzume.booth.pm/items/4653948"
+				title="えのころ角ゴシック palt"
+				body="プロポーショナルメトリクスが有効になります。句読点や括弧類の幅が半分になるため、適宜スペースを入れてください。"
 			/>
 			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+				href="https://s-suzume.booth.pm/items/4659933"
+				title="えのころ明朝 palt"
+				body="プロポーショナルメトリクスが有効になります。句読点や括弧類の幅が半分になるため、適宜スペースを入れてください。"
 			/>
 			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+				href="https://s-suzume.booth.pm/items/4659935"
+				title="えのころ角ゴシック vert"
+				body="縦書きに対応していないアプリケーションで縦書きを利用するため、和文グリフが90度回転しています。"
 			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+			<DisabledCard
+				title="えのころ明朝 vert"
+				body="（準備中）縦書きに対応していないアプリケーションで縦書きを利用するため、和文グリフが90度回転しています。"
 			/>
+		</ul>
+
+		<h3>ライセンス</h3>
+		<p><a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=OFL">SIL Open Font License 1.1</a>（<a href="https://ja.osdn.net/projects/opensource/wiki/SIL_Open_Font_License_1.1">日本語訳</a>）</p>
+
+		<h3>今後の予定</h3>
+		<ul class="par">
+			<li>縦書きプロポーショナルメトリクス vpal に対応したフォントを作成する</li>
+			<li>必要のないフィーチャーやグリフを削除してファイルサイズを軽量化する</li>
 		</ul>
 	</main>
 </Layout>
@@ -41,10 +52,24 @@ import Card from '../components/Card.astro';
 		padding: 1.5rem;
 		max-width: 60ch;
 	}
+	h1, h2 {
+		font-feature-settings: "palt" 1;
+	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
+	}
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 800;
+		margin: 4.5rem 0 1rem;
+	}
+	h3 {
+		font-size: 1.08rem;
+		font-weight: 800;
+		line-height: 1.25rem;
+		margin: 3rem 0 1rem;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -53,24 +78,10 @@ import Card from '../components/Card.astro';
 		background-size: 400%;
 		background-position: 0%;
 	}
-	.instructions {
+	.par {
 		line-height: 1.6;
 		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
 		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
 	}
 	.link-card-grid {
 		display: grid;
