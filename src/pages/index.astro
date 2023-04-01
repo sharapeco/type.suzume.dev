@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import DisabledCard from '../components/DisabledCard.astro';
 ---
 
 <Layout title="type.suzume.dev">
@@ -29,14 +28,20 @@ import DisabledCard from '../components/DisabledCard.astro';
 				title="えのころ角ゴシック vert"
 				body="縦書きに対応していないアプリケーションで縦書きを利用するため、和文グリフが90度回転しています。"
 			/>
-			<DisabledCard
+			<Card
+				href="https://s-suzume.booth.pm/items/4659939"
 				title="えのころ明朝 vert"
-				body="（準備中）縦書きに対応していないアプリケーションで縦書きを利用するため、和文グリフが90度回転しています。"
+				body="縦書きに対応していないアプリケーションで縦書きを利用するため、和文グリフが90度回転しています。"
 			/>
 		</ul>
 
 		<h3>ライセンス</h3>
 		<p><a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=OFL">SIL Open Font License 1.1</a>（<a href="https://ja.osdn.net/projects/opensource/wiki/SIL_Open_Font_License_1.1">日本語訳</a>）</p>
+
+		<h3>既知の不具合</h3>
+		<ul class="par">
+			<li>vert: 縦書のメトリクス情報をすべて読み込んでいないため、‼ ⁇ ⁈ ⁉ などの文字がずれる</li>
+		</ul>
 
 		<h3>今後の予定</h3>
 		<ul class="par">
