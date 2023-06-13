@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="type.suzume.dev">
@@ -9,19 +9,29 @@ import Card from '../components/Card.astro';
 
 		<h2>えのころ</h2>
 		<p class="par">
-			<strong>えのころ角ゴシック</strong>、<strong>えのころ明朝</strong>は、<a href="https://github.com/adobe-fonts/source-han-sans/blob/master/README-JP.md">源ノ角ゴシック</a>、<a href="https://github.com/adobe-fonts/source-han-serif/blob/master/README-JP.md">源ノ明朝</a>の持つ和文に関する OpenType フィーチャーを Affinity シリーズでも使えるようにしたフォントです。
-			オリジナルと同様、各7ウェイトを提供しています。
+			<strong>えのころ角ゴシック</strong>、<strong>えのころ明朝</strong>は、<a
+				href="https://github.com/adobe-fonts/source-han-sans/blob/master/README-JP.md"
+				>源ノ角ゴシック</a
+			>、<a href="https://github.com/adobe-fonts/source-han-serif/blob/master/README-JP.md"
+				>源ノ明朝</a
+			>の持つ和文に関する OpenType フィーチャーを Affinity シリーズでも使えるようにしたフォントです。
+			オリジナルと同様、各 7 ウェイトを提供しています。
 		</p>
 		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://s-suzume.booth.pm/items/4852466"
-				title="えのころ角ゴシック"
-			/>
-			<Card
-				href="https://s-suzume.booth.pm/items/4852495"
-				title="えのころ明朝"
-			/>
+			<Card href="https://s-suzume.booth.pm/items/4852466" title="えのころ角ゴシック" />
+			<Card href="https://s-suzume.booth.pm/items/4852495" title="えのころ明朝" />
 		</ul>
+
+		<div style="padding:75% 0 0 0;position:relative;">
+			<iframe
+				src="https://player.vimeo.com/video/835685514?badge=0&autopause=0&player_id=0&app_id=58479"
+				frameborder="0"
+				allow="autoplay; fullscreen; picture-in-picture"
+				allowfullscreen
+				style="position:absolute;top:0;left:0;width:100%;height:100%;"
+				title="えのころ角ゴシック、えのころ明朝の紹介"></iframe>
+		</div>
+		<script src="https://player.vimeo.com/api/player.js"></script>
 
 		<h3>主な機能</h3>
 		<ul class="par">
@@ -33,7 +43,13 @@ import Card from '../components/Card.astro';
 		</ul>
 
 		<h3>ライセンス</h3>
-		<p><a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;id=OFL">SIL Open Font License 1.1</a>（<a href="https://ja.osdn.net/projects/opensource/wiki/SIL_Open_Font_License_1.1">日本語訳</a>）</p>
+		<p>
+			<a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+				>SIL Open Font License 1.1</a
+			>（<a href="https://ja.osdn.net/projects/opensource/wiki/SIL_Open_Font_License_1.1"
+				>日本語訳</a
+			>）
+		</p>
 
 		<h3>注意すべき仕様</h3>
 		<p class="par">
@@ -50,7 +66,9 @@ import Card from '../components/Card.astro';
 
 		<h3>既知の不具合</h3>
 		<ul class="par">
-			<li>不具合があれば <a href="https://twitter.com/stsuzume">@stsuzume</a> までお知らせください</li>
+			<li>
+				不具合があれば <a href="https://twitter.com/stsuzume">@stsuzume</a> までお知らせください
+			</li>
 		</ul>
 
 		<h3>リリースノート</h3>
@@ -63,14 +81,16 @@ import Card from '../components/Card.astro';
 		<h3>今後の予定</h3>
 		<ul class="par">
 			<li>必要のないフィーチャーやグリフを削除してファイルサイズを軽量化する</li>
-			<li>同様に変換した書体を増やす。名称はそれぞれのフォントのライセンスに従って付ける。Zen Old Mincho、Zen Maru Gothic</li>
+			<li>
+				同様に変換した書体を増やす。名称はそれぞれのフォントのライセンスに従って付ける。Zen
+				Old Mincho、Zen Maru Gothic
+			</li>
 			<li>何らかの方法で変換プログラムを公開する</li>
 		</ul>
 	</main>
 
 	<address>
-		スタジオスズメ
-		| <a href="https://twitter.com/stsuzume">Twitter</a>
+		スタジオスズメ | <a href="https://twitter.com/stsuzume">Twitter</a>
 		| <a href="https://instagram.com/stsuzume">Instagram</a>
 	</address>
 </Layout>
@@ -83,13 +103,14 @@ import Card from '../components/Card.astro';
 	}
 	address {
 		margin: 1.5rem auto;
-		padding-block-start: .75rem;
+		padding-block-start: 0.75rem;
 		max-width: 40rem;
 		border-block-start: solid 1px #ccc;
 		font-size: 88%;
 		font-style: normal;
 	}
-	h1, h2 {
+	h1,
+	h2 {
 		font-feature-settings: "palt" 1 "chws" 1;
 	}
 	h1 {
