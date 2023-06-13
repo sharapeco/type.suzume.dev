@@ -9,30 +9,27 @@ import Card from '../components/Card.astro';
 
 		<h2>えのころ</h2>
 		<p class="par">
-			<strong>えのころ</strong>は、<a href="https://github.com/adobe-fonts/source-han-sans/blob/master/README-JP.md">源ノ角ゴシック</a>、<a href="https://github.com/adobe-fonts/source-han-serif/blob/master/README-JP.md">源ノ明朝</a>をベースに、高度なタイポグラフィ機能を持たないアプリケーションでも、プロポーショナルメトリクスや縦書きを利用するためのフォントです。
+			<strong>えのころ角ゴシック</strong>、<strong>えのころ明朝</strong>は、<a href="https://github.com/adobe-fonts/source-han-sans/blob/master/README-JP.md">源ノ角ゴシック</a>、<a href="https://github.com/adobe-fonts/source-han-serif/blob/master/README-JP.md">源ノ明朝</a>の持つ和文に関する OpenType フィーチャーを Affinity シリーズでも使えるようにしたフォントです。
 			オリジナルと同様、各7ウェイトを提供しています。
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://s-suzume.booth.pm/items/4653948"
-				title="えのころ角ゴシック palt"
-				body="プロポーショナルメトリクスが有効になります。句読点や括弧類の幅が半分になるため、適宜スペースを入れてください。"
+				href="https://s-suzume.booth.pm/items/4852466"
+				title="えのころ角ゴシック"
 			/>
 			<Card
-				href="https://s-suzume.booth.pm/items/4659933"
-				title="えのころ明朝 palt"
-				body="プロポーショナルメトリクスが有効になります。句読点や括弧類の幅が半分になるため、適宜スペースを入れてください。"
+				href="https://s-suzume.booth.pm/items/4852495"
+				title="えのころ明朝"
 			/>
-			<Card
-				href="https://s-suzume.booth.pm/items/4659935"
-				title="えのころ角ゴシック vert"
-				body="縦書きに対応していないアプリケーションで縦書きを利用するため、和文グリフが90度回転しています。"
-			/>
-			<Card
-				href="https://s-suzume.booth.pm/items/4659939"
-				title="えのころ明朝 vert"
-				body="縦書きに対応していないアプリケーションで縦書きを利用するため、和文グリフが90度回転しています。"
-			/>
+		</ul>
+
+		<h3>主な機能</h3>
+		<ul class="par">
+			<li>プロポーショナルメトリクス</li>
+			<li>連続する約物のアキ調整</li>
+			<li>漢字字形選択（JIS78, JIS83, JIS90, 国語審議会2000字形）</li>
+			<li>ルビ用字形</li>
+			<li>縦組み</li>
 		</ul>
 
 		<h3>ライセンス</h3>
@@ -53,28 +50,44 @@ import Card from '../components/Card.astro';
 
 		<h3>既知の不具合</h3>
 		<ul class="par">
-			<li>vert: ラテン文字の全角形の位置が縦組用に調整されていない（VORGテーブル）</li>
+			<li>不具合があれば <a href="https://twitter.com/stsuzume">@stsuzume</a> までお知らせください</li>
 		</ul>
 
 		<h3>リリースノート</h3>
 		<ul class="par">
+			<li>2023-06-13 v1.2.0 Affinity 向けに最適化。vert の不具合を修正</li>
 			<li>2023-04-03 v1.0.0 縦書き時の不具合を修正し、バージョン番号を 1.0.0 としました</li>
-			<li>2023-04-01 初版リリース</li>
+			<li>2023-04-01 プロポーショナルメトリクスを固定した palt と vert の初版リリース</li>
 		</ul>
 
 		<h3>今後の予定</h3>
 		<ul class="par">
-			<li>縦書きプロポーショナルメトリクス vpal に対応したフォントを作成する</li>
 			<li>必要のないフィーチャーやグリフを削除してファイルサイズを軽量化する</li>
+			<li>同様に変換した書体を増やす。名称はそれぞれのフォントのライセンスに従って付ける。Zen Old Mincho、Zen Maru Gothic</li>
+			<li>何らかの方法で変換プログラムを公開する</li>
 		</ul>
 	</main>
+
+	<address>
+		スタジオスズメ
+		| <a href="https://twitter.com/stsuzume">Twitter</a>
+		| <a href="https://instagram.com/stsuzume">Instagram</a>
+	</address>
 </Layout>
 
 <style>
 	main {
 		margin: auto;
 		padding: 1.5rem;
-		max-width: 60ch;
+		max-width: 40rem;
+	}
+	address {
+		margin: 1.5rem auto;
+		padding-block-start: .75rem;
+		max-width: 40rem;
+		border-block-start: solid 1px #ccc;
+		font-size: 88%;
+		font-style: normal;
 	}
 	h1, h2 {
 		font-feature-settings: "palt" 1 "chws" 1;
