@@ -17,10 +17,6 @@ import Card from "../components/Card.astro";
 			>の持つ和文に関する OpenType フィーチャーを Affinity シリーズでも使えるようにしたフォントです。
 			オリジナルと同様、各 7 ウェイトを提供しています。
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card href="https://s-suzume.booth.pm/items/4852466" title="えのころ角ゴシック" />
-			<Card href="https://s-suzume.booth.pm/items/4852495" title="えのころ明朝" />
-		</ul>
 
 		<div style="padding:75% 0 0 0;position:relative;">
 			<iframe
@@ -32,6 +28,11 @@ import Card from "../components/Card.astro";
 				title="えのころ角ゴシック、えのころ明朝の紹介"></iframe>
 		</div>
 		<script src="https://player.vimeo.com/api/player.js"></script>
+
+		<ul role="list" class="link-card-grid">
+			<Card href="https://s-suzume.booth.pm/items/4852466" title="えのころ角ゴシック" description="Booth でダウンロード" />
+			<Card href="https://s-suzume.booth.pm/items/4852495" title="えのころ明朝" description="Booth でダウンロード" />
+		</ul>
 
 		<h3>主な機能</h3>
 		<ul class="par">
@@ -117,6 +118,11 @@ import Card from "../components/Card.astro";
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
+	}
+	@media (max-width: 38rem) {
+		h1 {
+			font-size: 8vw;
+		}
 	}
 	h2 {
 		font-size: 1.5rem;
