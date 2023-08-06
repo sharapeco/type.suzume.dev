@@ -1,66 +1,41 @@
 ---
 export interface Props {
-	title: string;
+	name: string;
 	href: string;
-	description: string;
+	src: string;
 }
 
-const { href, title, description } = Astro.props;
+const { name, href, src } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="card">
 	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>{description}</p>
+		<img alt={name} src={src} />
 	</a>
 </li>
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.25rem;
-		background-color: white;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 0.6rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	.card a {
+		display: inline-block;
+		vertical-align: bottom;
+		border: solid 1px #ddd;
 	}
-
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1rem 1.3rem;
-		padding-block: 1rem;
-		padding-inline: 1.3rem;
-		border-radius: 0.35rem;
-		color: #111;
-		background-color: white;
-		opacity: 0.8;
+	@keyframes card-hover {
+		0% {
+			outline: solid 0 rgba(var(--accent), 0);
+		}
+		100% {
+			outline: solid 2px rgb(var(--accent));
+		}
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.2rem;
-		font-feature-settings: "palt" 1 "chws" 1;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	.card a:hover,
+	.card a:focus {
+		outline: solid 2px rgb(var(--accent));
+		animation: card-hover 0.2s ease-out 1;
 	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		margin-block: 0.5rem 0;
-		color: #444;
-		font-size: 0.9rem;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent));
+	.card img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		vertical-align: bottom;
 	}
 </style>

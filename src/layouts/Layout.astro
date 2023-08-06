@@ -34,7 +34,63 @@ const { title } = Astro.props;
 		color: rgb(var(--accent));
 		text-decoration: none;
 	}
+	.btn {
+		padding: 0.5em 1em;
+		color: #fff;
+		background: rgba(var(--accent), 0.8);
+		text-align: center;
+		border-radius: 2em;
+	}
+	.btn:hover,
+	.btn:focus {
+		background: rgb(var(--accent));
+	}
 	strong {
 		font-weight: 800;
+	}
+
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 40rem;
+	}
+
+	h1,
+	h2 {
+		font-feature-settings: "palt" 1, "chws" 1;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+		margin: 0 0 3.2rem;
+	}
+	@media (max-width: 38rem) {
+		h1 {
+			font-size: 8vw;
+		}
+	}
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 800;
+		letter-spacing: -0.0125em;
+		margin: 4.5rem 0 1rem;
+		margin-block: 4.5rem 1rem;
+		margin-inline: 0;
+	}
+	h3 {
+		font-size: 1.08rem;
+		font-weight: 800;
+		line-height: 1.25rem;
+		margin: 3rem 0 1rem;
+		margin-block: 3rem 1rem;
+		margin-inline: 0;
+	}
+	.par {
+		line-height: 1.6;
+		margin: 1rem 0;
+		margin-block: 1rem;
+		margin-inline: 0;
 	}
 </style>

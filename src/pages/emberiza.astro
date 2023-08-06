@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Address from "../components/Address.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="コーディングフォント Emberiza Sans">
+	<main>
+		<h1>
+			<img alt="Emberiza Sans – Fonts for modern coding" src="/img/emberiza-jt.png" />
+		</h1>
+
+		<p class="par">
+			Emberiza Sans はプロポーショナル幅のコーディング用フォントです。
+		</p>
+		<p class="par">
+			一般的なフォントと異なり、括弧類、引用符、ピリオドやカンマなどが他の文字とくっついて見えないよう、
+			左右の余白を広く取っています。
+		</p>
+
+		<h2>ライセンス</h2>
+		<p>MIT License に従い、誰でも無償で自由に利用できます。</p>
+
+		<h2>ダウンロード</h2>
+		<ul>
+			<li>
+				<a class="btn" href="/downloads/EmberizaSans-0.110.zip" download>Emberiza Sans v0.110</a>
+			</li>
+			<li>
+				<a class="btn" href="/downloads/EmberizaSans-12-0.201.zip" download>Emberiza Sans 12 v0.201</a>
+			</li>
+		</ul>
+	</main>
+	<Address></Address>
+</Layout>
+
+<style>
+	img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+	}
+	li {
+		flex: 1;
+		padding-inline: 1em;
+	}
+	.btn {
+		display: block;
+	}
+</style>

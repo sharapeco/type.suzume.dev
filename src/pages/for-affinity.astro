@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Address from "../components/Address.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="日本語組版のためのフォント for Affinity">
+	<main>
+		<h1>
+			<span class="nihongo">日本語組版</span><span class="notameno">のための</span><span class="font">フォント</span>
+			<span class="for-affinity">for Affinity</span>
+		</h1>
+
+		<p class="par">
+			Serif 社のグラフィックソフト <a href="https://affinity.serif.com">Affinity</a> シリーズでは、フォントに含まれる代替プロポーショナルメトリクスを使用した文字詰めや、漢字字形の切り替え、縦組みなど、日本語組版のための機能を使うことができません。
+		</p>
+		<p class="par">
+			ここで公開しているフォントは、これらの日本語組版のための機能を Affinity から使用できるように変更を加えたものです。
+			どなたでも SIL Open Font License 1.1 にしたがい無償でご自由にお使いいただけます。
+		</p>
+
+		<div class="link-card-container">
+			<ul role="list" class="link-card-grid">
+				<Card href="https://s-suzume.booth.pm/items/4852495" name="えのころ明朝" src="/img/enokoro-serif.png" />
+				<Card href="https://s-suzume.booth.pm/items/4885587" name="つゆくさ明朝" src="/img/tsuyukusa-mincho.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4898539" name="はこべら明朝" src="/img/hakobera-mincho.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4907999" name="おおばこMゴシック" src="/img/oobako-m-gothic.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4852466" name="えのころ角ゴシック" src="/img/enokoro-sans.png" />
+				<Card href="https://s-suzume.booth.pm/items/4898644" name="はこべら角ゴシックA" src="/img/hakobera-kaku-gothic-a.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4898664" name="はこべら角ゴシックB" src="/img/hakobera-kaku-gothic-b.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4898678" name="はこべら丸ゴシックA" src="/img/hakobera-maru-gothic-a.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4898687" name="はこべら丸ゴシックB" src="/img/hakobera-maru-gothic-b.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4887266" name="つゆくさアンチック" src="/img/tsuyukusa-antique.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4893048" name="クレー One ss/vert" src="/img/klee.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4893103" name="ステッキ ss/vert"src="/img/stick.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4893103" name="ロックンロール One ss/vert" src="/img/rocknroll.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4893088" name="レゲエ One ss/vert" src="/img/reggae.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4893112" name="トレイン One ss/vert" src="/img/train.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4893080" name="ドットゴシック16 ss/vert" src="/img/dot-gothic-16.jpg" />
+			</ul>
+		</div>
+
+		<div style="padding:60% 0 0 0;position:relative;">
+			<iframe
+				src="https://player.vimeo.com/video/835685514?badge=0&autopause=0&player_id=0&app_id=58479"
+				frameborder="0"
+				allow="autoplay; fullscreen; picture-in-picture"
+				allowfullscreen
+				style="position:absolute;top:0;left:0;width:100%;height:100%;"
+				title="えのころ角ゴシック、えのころ明朝の紹介"></iframe>
+		</div>
+		<script src="https://player.vimeo.com/api/player.js"></script>
+
+		<h2>主な機能</h2>
+		<p>フォントにより搭載されている機能は異なります。</p>
+		<ul class="par">
+			<li>プロポーショナルメトリクス</li>
+			<li>連続する約物のアキ調整</li>
+			<li>漢字字形選択（JIS78, JIS83, JIS90, 国語審議会2000字形）</li>
+			<li>縦組み</li>
+		</ul>
+
+		<h2>ライセンス</h2>
+		<p>
+			<a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+				>SIL Open Font License 1.1</a
+			>（<a href="https://ja.osdn.net/projects/opensource/wiki/SIL_Open_Font_License_1.1"
+				>日本語訳</a
+			>）
+		</p>
+
+		<h2>注意すべき仕様</h2>
+		<p class="par">
+			縦組用の vert フォントは Adobe InDesign/Illustrator とは正立する文字が異なり、ウェブブラウザで <code>writing-mode: vertical-rl</code> を設定したときと近い動作をします。
+			これらのアプリケーションで使用している原稿を流用する際はご注意ください。
+		</p>
+		<ul class="par">
+			<li>正立: ⁑ ⁂ † § ‼ ⁇ ⁈ ⁉</li>
+			<li>横倒し: ＜ ＞ ； € 〰</li>
+			<li>矢印の向きが書字方向に依存します。つまり ← は ↑ の向きに見えます</li>
+			<li>3点リーダ（…）は左寄りではなく中央に配置されます</li>
+		</ul>
+
+		<h2>既知の不具合</h2>
+		<ul class="par">
+			<li>
+				不具合があれば <a href="https://twitter.com/stsuzume">@stsuzume</a> までお知らせください
+			</li>
+		</ul>
+
+		<h2>リリースノート</h2>
+		<ul class="par">
+			<li>2023-06-17 v1.2.1 Windows で複数のウェイトをインストールできない不具合を修正</li>
+			<li>2023-06-13 v1.2.0 Affinity 向けに最適化。vert の不具合を修正</li>
+			<li>2023-04-03 v1.0.0 縦書き時の不具合を修正し、バージョン番号を 1.0.0 としました</li>
+			<li>2023-04-01 プロポーショナルメトリクスを固定した palt と vert の初版リリース</li>
+		</ul>
+
+		<h2>今後の予定</h2>
+		<ul class="par">
+			<li>必要のないフィーチャーやグリフを削除してファイルサイズを軽量化する</li>
+			<li>お手持ちのフォントに同様の変換を行うサービスを公開する</li>
+		</ul>
+	</main>
+	<Address></Address>
+</Layout>
+
+<style>
+	.nihongo {
+		display: inline-block;
+		font-size: 95%;
+	}
+	.notameno {
+		display: inline-block;
+		font-size: 80%;
+	}
+	.font {
+		display: inline-block;
+		font-size: 100%;
+	}
+	.for-affinity {
+		display: inline-block;
+		font-size: 87%;
+	}
+
+	.link-card-container {
+		margin-block: 3.2rem;
+		margin-inline: calc(60% - 50vw);
+	}
+	.link-card-grid {
+		max-width: 60rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+		gap: .5rem;
+		margin: 0 auto;
+		padding: 0;
+		list-style: none;
+	}
+</style>
