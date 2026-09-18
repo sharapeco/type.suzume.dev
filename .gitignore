@@ -24,3 +24,6 @@ pnpm-debug.log*
 *.afdesign
 *.afphoto
 *.afpub
+
+# Cloudflare
+.wrangler/
