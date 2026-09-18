@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Address from "../components/Address.astro";
+import { Picture } from "astro:assets";
+import forAffinityJt from "../assets/img/for-affinity-jt.png";
+import emberizaJt from "../assets/img/emberiza-jt.png";
 ---
 
 <Layout title="type.suzume.dev">
@@ -10,12 +13,26 @@ import Address from "../components/Address.astro";
 		<nav>
 			<div class="nav-item">
 				<a href="/for-affinity/">
-					<img alt="日本語組版するためのフォント for Affinity" src="/img/for-affinity-jt.png" />
+					<Picture
+						src={forAffinityJt}
+						formats={["avif", "webp"]}
+						fallbackFormat="jpeg"
+						widths={[320, 592, 888, 1184]}
+						sizes="(min-width: 40rem) 592px, calc(100vw - 3rem)"
+						alt="日本語組版するためのフォント for Affinity"
+					/>
 				</a>
 			</div>
 			<div class="nav-item">
 				<a href="/emberiza/">
-					<img alt="コーディングフォント Emberiza Sans" src="/img/emberiza-jt.png" />
+					<Picture
+						src={emberizaJt}
+						formats={["avif", "webp"]}
+						fallbackFormat="jpeg"
+						widths={[320, 592, 888, 1184]}
+						sizes="(min-width: 40rem) 592px, calc(100vw - 3rem)"
+						alt="コーディングフォント Emberiza Sans"
+					/>
 				</a>
 			</div>
 		</nav>

@@ -2,6 +2,23 @@
 import Layout from "../layouts/Layout.astro"
 import Address from "../components/Address.astro";
 import Card from "../components/Card.astro";
+import enokoroSerif from "../assets/img/enokoro-serif.png";
+import tsuyukusaMincho from "../assets/img/tsuyukusa-mincho.jpg";
+import hakoberaMincho from "../assets/img/hakobera-mincho.jpg";
+import oobakoMGothic from "../assets/img/oobako-m-gothic.jpg";
+import enokoroSans from "../assets/img/enokoro-sans.png";
+import tsuyukusaGothic from "../assets/img/tsuyukusa-gothic.jpg";
+import hakoberaKakuGothicA from "../assets/img/hakobera-kaku-gothic-a.jpg";
+import hakoberaKakuGothicB from "../assets/img/hakobera-kaku-gothic-b.jpg";
+import hakoberaMaruGothicA from "../assets/img/hakobera-maru-gothic-a.jpg";
+import hakoberaMaruGothicB from "../assets/img/hakobera-maru-gothic-b.jpg";
+import tsuyukusaAntique from "../assets/img/tsuyukusa-antique.jpg";
+import klee from "../assets/img/klee.jpg";
+import stick from "../assets/img/stick.jpg";
+import rocknroll from "../assets/img/rocknroll.jpg";
+import reggae from "../assets/img/reggae.jpg";
+import train from "../assets/img/train.jpg";
+import dotGothic16 from "../assets/img/dot-gothic-16.jpg";
 ---
 
 <Layout title="日本語組版のためのフォント for Affinity">
@@ -21,23 +38,23 @@ import Card from "../components/Card.astro";
 
 		<div class="link-card-container">
 			<ul role="list" class="link-card-grid">
-				<Card href="https://s-suzume.booth.pm/items/4852495" name="えのころ明朝" src="/img/enokoro-serif.png" />
-				<Card href="https://s-suzume.booth.pm/items/4885587" name="つゆくさ明朝" src="/img/tsuyukusa-mincho.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4898539" name="はこべら明朝" src="/img/hakobera-mincho.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4907999" name="おおばこMゴシック" src="/img/oobako-m-gothic.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4852466" name="えのころ角ゴシック" src="/img/enokoro-sans.png" />
-				<Card href="https://s-suzume.booth.pm/items/5167426" name="つゆくさゴシック" src="/img/tsuyukusa-gothic.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4898644" name="はこべら角ゴシックA" src="/img/hakobera-kaku-gothic-a.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4898664" name="はこべら角ゴシックB" src="/img/hakobera-kaku-gothic-b.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4898678" name="はこべら丸ゴシックA" src="/img/hakobera-maru-gothic-a.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4898687" name="はこべら丸ゴシックB" src="/img/hakobera-maru-gothic-b.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4887266" name="つゆくさアンチック" src="/img/tsuyukusa-antique.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4893048" name="クレー One ss/vert" src="/img/klee.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4893103" name="ステッキ ss/vert"src="/img/stick.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4893095" name="ロックンロール One ss/vert" src="/img/rocknroll.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4893088" name="レゲエ One ss/vert" src="/img/reggae.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4893112" name="トレイン One ss/vert" src="/img/train.jpg" />
-				<Card href="https://s-suzume.booth.pm/items/4893080" name="ドットゴシック16 ss/vert" src="/img/dot-gothic-16.jpg" />
+				<Card href="https://s-suzume.booth.pm/items/4852495" name="えのころ明朝" src={enokoroSerif} />
+				<Card href="https://s-suzume.booth.pm/items/4885587" name="つゆくさ明朝" src={tsuyukusaMincho} />
+				<Card href="https://s-suzume.booth.pm/items/4898539" name="はこべら明朝" src={hakoberaMincho} />
+				<Card href="https://s-suzume.booth.pm/items/4907999" name="おおばこMゴシック" src={oobakoMGothic} />
+				<Card href="https://s-suzume.booth.pm/items/4852466" name="えのころ角ゴシック" src={enokoroSans} />
+				<Card href="https://s-suzume.booth.pm/items/5167426" name="つゆくさゴシック" src={tsuyukusaGothic} />
+				<Card href="https://s-suzume.booth.pm/items/4898644" name="はこべら角ゴシックA" src={hakoberaKakuGothicA} />
+				<Card href="https://s-suzume.booth.pm/items/4898664" name="はこべら角ゴシックB" src={hakoberaKakuGothicB} />
+				<Card href="https://s-suzume.booth.pm/items/4898678" name="はこべら丸ゴシックA" src={hakoberaMaruGothicA} />
+				<Card href="https://s-suzume.booth.pm/items/4898687" name="はこべら丸ゴシックB" src={hakoberaMaruGothicB} />
+				<Card href="https://s-suzume.booth.pm/items/4887266" name="つゆくさアンチック" src={tsuyukusaAntique} />
+				<Card href="https://s-suzume.booth.pm/items/4893048" name="クレー One ss/vert" src={klee} />
+				<Card href="https://s-suzume.booth.pm/items/4893103" name="ステッキ ss/vert" src={stick} />
+				<Card href="https://s-suzume.booth.pm/items/4893095" name="ロックンロール One ss/vert" src={rocknroll} />
+				<Card href="https://s-suzume.booth.pm/items/4893088" name="レゲエ One ss/vert" src={reggae} />
+				<Card href="https://s-suzume.booth.pm/items/4893112" name="トレイン One ss/vert" src={train} />
+				<Card href="https://s-suzume.booth.pm/items/4893080" name="ドットゴシック16 ss/vert" src={dotGothic16} />
 			</ul>
 		</div>
 

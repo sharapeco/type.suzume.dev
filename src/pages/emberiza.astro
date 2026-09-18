@@ -1,12 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Address from "../components/Address.astro";
+import { Picture } from "astro:assets";
+import emberizaJt from "../assets/img/emberiza-jt.png";
 ---
 
 <Layout title="コーディングフォント Emberiza Sans">
 	<main>
 		<h1>
-			<img alt="Emberiza Sans – Fonts for modern coding" src="/img/emberiza-jt.png" />
+			<Picture
+				src={emberizaJt}
+				formats={["avif", "webp"]}
+				fallbackFormat="jpeg"
+				widths={[320, 592, 888, 1184]}
+				sizes="(min-width: 40rem) 592px, calc(100vw - 3rem)"
+				alt="Emberiza Sans – Fonts for modern coding"
+			/>
 		</h1>
 
 		<p class="par">

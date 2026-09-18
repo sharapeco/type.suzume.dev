@@ -1,8 +1,10 @@
 ---
+import { Picture } from "astro:assets";
+
 export interface Props {
 	name: string;
 	href: string;
-	src: string;
+	src: ImageMetadata;
 }
 
 const { name, href, src } = Astro.props;
@@ -10,7 +12,14 @@ const { name, href, src } = Astro.props;
 
 <li class="card">
 	<a href={href}>
-		<img alt={name} src={src} />
+		<Picture
+			src={src}
+			formats={["avif", "webp"]}
+			fallbackFormat="jpeg"
+			widths={[192, 384, 576]}
+			sizes="(min-width: 40rem) 192px, (min-width: 27rem) 45vw, calc(100vw - 3rem)"
+			alt={name}
+		/>
 	</a>
 </li>
 <style>
