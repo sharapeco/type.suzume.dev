@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Address from "../components/Address.astro";
+import { Picture } from "astro:assets";
+import kumituneJt from "../assets/img/kumitune-jt.jpg";
+import kumituneScreenshot from "../assets/img/kumitune-screenshot.jpg";
+
+const description = "フォントが持つ日本語組版機能を Affinity から使えるように変換するためのデスクトップアプリです。Windows/macOS対応。";
+---
+
+<Layout title="組Tune" image={kumituneJt} description={description}>
+	<main>
+		<h1>
+			<Picture
+				src={kumituneJt}
+				formats={["avif", "webp"]}
+				fallbackFormat="jpeg"
+				widths={[360, 512, 720, 1024, 1280]}
+				sizes="(min-width: 100rem) 720px, (min-width: 48rem) calc(512px + 13vw), (min-width: 41.5rem) 612px, calc(100vw - 51px)"
+				alt="組Tune – フォントが持つ日本語組版機能をAffinityに変換するツール（Windows/macOS対応）"
+			/>
+		</h1>
+
+		<p class="par">{description}</p>
+
+		<div class="wide screenshot">
+			<Picture
+				src={kumituneScreenshot}
+				formats={["avif", "webp"]}
+				fallbackFormat="jpeg"
+				widths={[480, 768, 1024, 1440, 1920]}
+				sizes="(min-width: 78em) 1440px, (min-width: 45em) 72em, calc(100vw - 3em)"
+				alt="組Tuneの画面。読み込んだフォントごとに変換後の kumi・vert バリアントと対応フィーチャーのタグが一覧表示され、右下に「書き出し…」ボタンがある。"
+			/>
+		</div>
+
+		<h2>機能</h2>
+		<ul class="par">
+			<li>プロポーショナル仮名（palt）</li>
+			<li>連続する約物のアキ調整（chws）</li>
+			<li>漢字字形選択（JIS78, JIS83, JIS90, 国語審議会2000字形）</li>
+			<li>縦組み（vert）</li>
+			<li>欧文約物の上下位置調整（case）</li>
+		</ul>
+
+		<h2>使い方</h2>
+		<ol class="par">
+			<li>フォントファイルをドラッグ（または「＋」から選択して追加）</li>
+			<li>追加したフォントが対応している機能を確認します</li>
+			<li>「書き出し…」でフォントを書き出します</li>
+			<li>書き出したフォントをインストールし、Affinity で使用します</li>
+		</ol>
+
+		<h2>ダウンロード</h2>
+		<ul class="download-list">
+			<li>
+				<a class="btn" href="https://apps.microsoft.com/detail/9nsq1wldlwc8">
+					Windows
+					<small class="download-detail">Microsoft Store を開く</small>
+				</a>
+			</li>
+			<li>
+				<a class="btn" href="https://static.suzume.dev/tools/kumitune/KumiTune-0.1.0.dmg">
+					macOS
+					<small class="download-detail">KumiTune-0.1.0.dmg</small>
+				</a>
+			</li>
+		</ul>
+
+		<h2>ご注意</h2>
+		<ul class="par">
+			<li>変換するフォントは、そのライセンスで許諾された範囲内で使用します。改変や変換が認められているかは、利用者自身が確認します。</li>
+			<li>フォントの使用や変換をめぐってフォントベンダーなどの権利者との間に紛争が生じた場合は、利用者自身の責任で対応します。</li>
+			<li>本アプリは現状のまま無保証で提供されます。本アプリの使用によって生じたいかなる損害についても、作者は責任を負いません。</li>
+		</ul>
+	</main>
+	<Address></Address>
+</Layout>
+
+<style>
+	h1 { margin-block-end: 1em; }
+	h1 picture, h1 img { display: block; }
+	h1 img { width: 100%; height: auto; }
+	@media (prefers-color-scheme: dark) {
+		/* 見本画像は白地なので、暗い背景で浮きすぎないようわずかに落とす */
+		h1 img { filter: brightness(0.86) contrast(1.02); }
+	}
+
+	.screenshot { margin-block: 1.5em; }
+	.screenshot picture, .screenshot img { display: block; }
+	.screenshot img { width: 100%; height: auto; border-radius: 0.4em; border: solid 1px var(--border); }
+	@media (prefers-color-scheme: dark) {
+		.screenshot img { filter: brightness(0.86) contrast(1.02); }
+	}
+
+	.download-list { display: flex; flex-wrap: wrap; gap: 0.75em; margin-block: 1.5em; padding: 0; list-style: none; }
+	.download-list li { flex: 1 1 14em; }
+	.btn { display: block; padding-block-start: 0.75em; padding-block-end: 0.7em; line-height: 1.25; }
+	.download-detail { display: block; font-family: var(--font-body); font-size: 75%; font-weight: 400; }
+</style>
