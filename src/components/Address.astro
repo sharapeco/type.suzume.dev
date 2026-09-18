@@ -5,11 +5,20 @@
 
 <style>
 	address {
-		margin: 1.5rem auto;
-		padding-block-start: 0.75rem;
-		max-width: 40rem;
-		border-block-start: solid 1px #ccc;
-		font-size: 88%;
+		width: min(var(--content), 100% - var(--gutter) * 2);
+		margin-inline: auto;
+		margin-block: 0 3em;
+		padding-block: 2.5em;
+		border-block-start: solid 1px var(--border);
+		font-size: 80%;
 		font-style: normal;
+		text-align: center;
+		color: var(--muted);
+	}
+	address a {
+		color: var(--muted);
+	}
+	address a:hover {
+		color: var(--accent);
 	}
 </style>

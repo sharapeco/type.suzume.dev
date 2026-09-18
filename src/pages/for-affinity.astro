@@ -36,35 +36,31 @@ import dotGothic16 from "../assets/img/dot-gothic-16.jpg";
 			どなたでも SIL Open Font License 1.1 にしたがい無償でご自由にお使いいただけます。
 		</p>
 
-		<div class="link-card-container">
-			<ul role="list" class="link-card-grid">
-				<Card href="https://s-suzume.booth.pm/items/4852495" name="えのころ明朝" src={enokoroSerif} />
-				<Card href="https://s-suzume.booth.pm/items/4885587" name="つゆくさ明朝" src={tsuyukusaMincho} />
-				<Card href="https://s-suzume.booth.pm/items/4898539" name="はこべら明朝" src={hakoberaMincho} />
-				<Card href="https://s-suzume.booth.pm/items/4907999" name="おおばこMゴシック" src={oobakoMGothic} />
-				<Card href="https://s-suzume.booth.pm/items/4852466" name="えのころ角ゴシック" src={enokoroSans} />
-				<Card href="https://s-suzume.booth.pm/items/5167426" name="つゆくさゴシック" src={tsuyukusaGothic} />
-				<Card href="https://s-suzume.booth.pm/items/4898644" name="はこべら角ゴシックA" src={hakoberaKakuGothicA} />
-				<Card href="https://s-suzume.booth.pm/items/4898664" name="はこべら角ゴシックB" src={hakoberaKakuGothicB} />
-				<Card href="https://s-suzume.booth.pm/items/4898678" name="はこべら丸ゴシックA" src={hakoberaMaruGothicA} />
-				<Card href="https://s-suzume.booth.pm/items/4898687" name="はこべら丸ゴシックB" src={hakoberaMaruGothicB} />
-				<Card href="https://s-suzume.booth.pm/items/4887266" name="つゆくさアンチック" src={tsuyukusaAntique} />
-				<Card href="https://s-suzume.booth.pm/items/4893048" name="クレー One ss/vert" src={klee} />
-				<Card href="https://s-suzume.booth.pm/items/4893103" name="ステッキ ss/vert" src={stick} />
-				<Card href="https://s-suzume.booth.pm/items/4893095" name="ロックンロール One ss/vert" src={rocknroll} />
-				<Card href="https://s-suzume.booth.pm/items/4893088" name="レゲエ One ss/vert" src={reggae} />
-				<Card href="https://s-suzume.booth.pm/items/4893112" name="トレイン One ss/vert" src={train} />
-				<Card href="https://s-suzume.booth.pm/items/4893080" name="ドットゴシック16 ss/vert" src={dotGothic16} />
-			</ul>
-		</div>
+		<ul role="list" class="link-card-grid wide">
+			<Card href="https://s-suzume.booth.pm/items/4852495" name="えのころ明朝" src={enokoroSerif} />
+			<Card href="https://s-suzume.booth.pm/items/4885587" name="つゆくさ明朝" src={tsuyukusaMincho} />
+			<Card href="https://s-suzume.booth.pm/items/4898539" name="はこべら明朝" src={hakoberaMincho} />
+			<Card href="https://s-suzume.booth.pm/items/4907999" name="おおばこMゴシック" src={oobakoMGothic} />
+			<Card href="https://s-suzume.booth.pm/items/4852466" name="えのころ角ゴシック" src={enokoroSans} />
+			<Card href="https://s-suzume.booth.pm/items/5167426" name="つゆくさゴシック" src={tsuyukusaGothic} />
+			<Card href="https://s-suzume.booth.pm/items/4898644" name="はこべら角ゴシックA" src={hakoberaKakuGothicA} />
+			<Card href="https://s-suzume.booth.pm/items/4898664" name="はこべら角ゴシックB" src={hakoberaKakuGothicB} />
+			<Card href="https://s-suzume.booth.pm/items/4898678" name="はこべら丸ゴシックA" src={hakoberaMaruGothicA} />
+			<Card href="https://s-suzume.booth.pm/items/4898687" name="はこべら丸ゴシックB" src={hakoberaMaruGothicB} />
+			<Card href="https://s-suzume.booth.pm/items/4887266" name="つゆくさアンチック" src={tsuyukusaAntique} />
+			<Card href="https://s-suzume.booth.pm/items/4893048" name="クレー One ss/vert" src={klee} />
+			<Card href="https://s-suzume.booth.pm/items/4893103" name="ステッキ ss/vert" src={stick} />
+			<Card href="https://s-suzume.booth.pm/items/4893095" name="ロックンロール One ss/vert" src={rocknroll} />
+			<Card href="https://s-suzume.booth.pm/items/4893088" name="レゲエ One ss/vert" src={reggae} />
+			<Card href="https://s-suzume.booth.pm/items/4893112" name="トレイン One ss/vert" src={train} />
+			<Card href="https://s-suzume.booth.pm/items/4893080" name="ドットゴシック16 ss/vert" src={dotGothic16} />
+		</ul>
 
-		<div style="padding:60% 0 0 0;position:relative;">
+		<div class="video">
 			<iframe
 				src="https://player.vimeo.com/video/835685514?badge=0&autopause=0&player_id=0&app_id=58479"
-				frameborder="0"
 				allow="autoplay; fullscreen; picture-in-picture"
 				allowfullscreen
-				style="position:absolute;top:0;left:0;width:100%;height:100%;"
 				title="えのころ角ゴシック、えのころ明朝の紹介"></iframe>
 		</div>
 		<script is:inline src="https://player.vimeo.com/api/player.js"></script>
@@ -124,9 +120,15 @@ import dotGothic16 from "../assets/img/dot-gothic-16.jpg";
 </Layout>
 
 <style>
+	/* h1 は文字種ごとに見た目の大きさを揃えるため、比率を手で調整している */
+	h1 {
+		word-spacing: -0.08em;
+	}
+
 	.nihongo {
+		margin-left: -0.08em;
 		display: inline-block;
-		font-size: 95%;
+		font-size: 93%;
 	}
 	.notameno {
 		display: inline-block;
@@ -134,24 +136,36 @@ import dotGothic16 from "../assets/img/dot-gothic-16.jpg";
 	}
 	.font {
 		display: inline-block;
-		font-size: 100%;
+		font-size: 93.5%;
+		letter-spacing: -0.028em;
 	}
 	.for-affinity {
 		display: inline-block;
-		font-size: 87%;
+		font-size: 93%;
+		letter-spacing: -0.025em;
 	}
 
-	.link-card-container {
-		margin-block: 3.2rem;
-		margin-inline: calc(60% - 50vw);
-	}
 	.link-card-grid {
-		max-width: 60rem;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-		gap: .5rem;
-		margin: 0 auto;
+		/* 狭い画面で1列＝巨大カードにならないよう、列の最小幅を 45% で頭打ちにする */
+		grid-template-columns: repeat(auto-fill, minmax(min(13em, 45%), 1fr));
+		gap: 0.75em;
+		margin-block: 2.5em;
 		padding: 0;
 		list-style: none;
+	}
+
+	.video {
+		position: relative;
+		margin-block: 2.5em;
+		padding-block-start: 60%;
+	}
+	.video iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+		border-radius: 0.4em;
 	}
 </style>

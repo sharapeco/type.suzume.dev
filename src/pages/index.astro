@@ -17,8 +17,8 @@ import emberizaJt from "../assets/img/emberiza-jt.png";
 						src={forAffinityJt}
 						formats={["avif", "webp"]}
 						fallbackFormat="jpeg"
-						widths={[320, 592, 888, 1184]}
-						sizes="(min-width: 40rem) 592px, calc(100vw - 3rem)"
+						widths={[360, 512, 720, 1024, 1280]}
+						sizes="(min-width: 100rem) 720px, (min-width: 48rem) calc(512px + 13vw), (min-width: 41.5rem) 612px, calc(100vw - 51px)"
 						alt="日本語組版するためのフォント for Affinity"
 					/>
 				</a>
@@ -29,8 +29,8 @@ import emberizaJt from "../assets/img/emberiza-jt.png";
 						src={emberizaJt}
 						formats={["avif", "webp"]}
 						fallbackFormat="jpeg"
-						widths={[320, 592, 888, 1184]}
-						sizes="(min-width: 40rem) 592px, calc(100vw - 3rem)"
+						widths={[360, 512, 720, 1024, 1280]}
+						sizes="(min-width: 100rem) 720px, (min-width: 48rem) calc(512px + 13vw), (min-width: 41.5rem) 612px, calc(100vw - 51px)"
 						alt="コーディングフォント Emberiza Sans"
 					/>
 				</a>
@@ -43,43 +43,39 @@ import emberizaJt from "../assets/img/emberiza-jt.png";
 
 <style>
 	h1 {
-		letter-spacing: -0.0125em;
+		margin-block-end: 1em;
 	}
 	nav {
-		margin: 1.5rem 0;
+		margin-block: 1.5em;
 	}
 	.nav-item {
-		margin-bottom: 1rem;
+		margin-block-end: 1em;
 	}
 	.nav-item a {
-		display: inline-block;
-		vertical-align: bottom;
-		border: solid 1px #ddd;
-	}
-	@keyframes nav-item-hover {
-		0% {
-			outline: solid 0 rgba(var(--accent), 0);
-		}
-		100% {
-			outline: solid 2px rgb(var(--accent));
-		}
+		display: block;
+		background: var(--surface);
+		border: solid 1px var(--border);
+		border-radius: 0.4em;
+		overflow: hidden;
+		text-decoration: none;
+		transition: border-color 0.15s ease-out;
 	}
 	.nav-item a:hover,
-	.nav-item a:focus {
-		outline: solid 2px rgb(var(--accent));
-		animation: nav-item-hover 0.2s ease-out 1;
+	.nav-item a:focus-visible {
+		border-color: var(--accent);
+	}
+	.nav-item picture,
+	.nav-item img {
+		display: block;
 	}
 	.nav-item img {
-		width: auto;
+		width: 100%;
 		height: auto;
-		max-width: 100%;
-		vertical-align: bottom;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	@media (prefers-color-scheme: dark) {
+		/* 見本画像はすべて白地なので、暗い背景で浮きすぎないようわずかに落とす */
+		.nav-item img {
+			filter: brightness(0.86) contrast(1.02);
+		}
 	}
 </style>

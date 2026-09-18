@@ -1,0 +1,200 @@
+/* ==========================================================================
+   カラートークン（組Tune と共通のスキーム）
+   ========================================================================== */
+
+:root {
+	--bg: #f5f5f4;
+	--surface: #ffffff;
+	--border: #e2e2df;
+	--text: #24231f;
+	--muted: #64645f;
+	--accent: #0064e1;
+	--accent-text: #ffffff;
+	--chip: color-mix(in srgb, var(--accent) 12%, var(--surface));
+	--chip-direct: var(--chip);
+	--chip-text: color-mix(in srgb, var(--accent) 50%, var(--muted));
+	--ok: #248a3d;
+	--error: #b3261e;
+	--warn-bg: #fff4d6;
+	--logo-accent: #b8ce47;
+
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #1e1e1d;
+		--surface: #292928;
+		--border: #3a3a38;
+		--text: #ececea;
+		--muted: #a3a39c;
+		--accent: #3b8df5;
+		--accent-text: #ffffff;
+		--ok: #30d158;
+		--error: #f28b82;
+		--warn-bg: #4a3d17;
+		/* 明るい文字の後ろで主張しすぎないよう、アイコンの黄緑 (#b8ce47) を暗めに落とす */
+		--logo-accent: #5f6a2c;
+	}
+}
+
+/* ==========================================================================
+   書体とレイアウト幅
+   ========================================================================== */
+
+:root {
+	/* 本文はデバイス標準のサンセリフに任せる（Webフォントを待たずに即描画される） */
+	--font-body: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue",
+		"Noto Sans JP", sans-serif;
+	/* 見出しは欧文 Inter ＋ 和文 Noto Sans JP（どちらも Google Fonts, SemiBold 600）。
+	   Inter を先に置くことで、ラテン文字は Inter、和文は Noto Sans JP へ落ちる。 */
+	--font-heading: "Inter", "Noto Sans JP", sans-serif;
+
+	/* 本文は読みやすい幅に収め、フォント見本などは --wide まで広げる。
+	   em 基準なので、下の基準文字サイズの拡大にそのまま連動する。 */
+	--content: 36em;
+	--wide: 72em;
+	--gutter: 1.5em;
+}
+
+/* ==========================================================================
+   基本
+   ========================================================================== */
+
+html {
+	/* 基準文字サイズ: 17px (vw 768) → 20px (vw 1600)。
+	   rem 基準で書くことでユーザーのブラウザ文字サイズ設定を尊重する。 */
+	font-size: clamp(1.0625rem, 0.889rem + 0.361vw, 1.25rem);
+	font-family: var(--font-body);
+	font-feature-settings: "chws" 1;
+	line-height: 1.8;
+	color: var(--text);
+	background: var(--bg);
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+iframe:focus-visible {
+	outline: none;
+}
+
+/* ==========================================================================
+   レイアウト
+
+   main を3トラックのグリッドにして、子要素に .wide / .full を付けるだけで
+   本文幅から外へはみ出せるようにする（負のマージンによる breakout は使わない）。
+   ========================================================================== */
+
+main {
+	display: grid;
+	grid-template-columns:
+		[full-start] minmax(var(--gutter), 1fr)
+		[wide-start] minmax(0, calc((var(--wide) - var(--content)) / 2))
+		[content-start] min(var(--content), 100% - var(--gutter) * 2) [content-end]
+		minmax(0, calc((var(--wide) - var(--content)) / 2)) [wide-end]
+		minmax(var(--gutter), 1fr) [full-end];
+	padding-block: 2.5em 3em;
+}
+
+main > * {
+	grid-column: content;
+}
+
+main > .wide {
+	grid-column: wide;
+}
+
+main > .full {
+	grid-column: full;
+}
+
+/* ==========================================================================
+   見出し
+   ========================================================================== */
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-heading);
+	font-feature-settings: "palt" 1, "chws" 1;
+	line-height: 1.3;
+	/* Inter・Noto Sans JP ともに SemiBold(600) のみを読み込んでいる */
+	font-weight: 600;
+}
+
+h1 {
+	font-size: clamp(1.7em, 1.45em + 1.1vw, 2.2em);
+	letter-spacing: -0.02em;
+	margin-block: 0.8em 1.5rem;
+}
+
+h2 {
+	font-size: 1.4em;
+	letter-spacing: -0.0125em;
+	margin-block: 2.2em 0.6em;
+}
+
+h3 {
+	font-size: 1.12em;
+	margin-block: 2em 0.5em;
+}
+
+/* ==========================================================================
+   本文
+   ========================================================================== */
+
+.par {
+	margin-block: 1em;
+	text-align: justify;
+}
+
+ul.par {
+	padding-inline-start: 1.4em;
+}
+
+ul.par li {
+	margin-block: 0.4em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a {
+	color: var(--accent);
+	text-decoration-line: underline;
+	text-underline-offset: 0.18em;
+	text-decoration-thickness: 0.06em;
+}
+
+a:hover {
+	text-decoration-thickness: 0.12em;
+}
+
+/* ==========================================================================
+   ボタン
+   ========================================================================== */
+
+.btn {
+	display: inline-block;
+	padding: 0.5em 1.2em;
+	font-family: var(--font-heading);
+	font-weight: 600;
+	color: var(--accent-text);
+	background: var(--accent);
+	border-radius: 0.4em;
+	text-align: center;
+	text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+	background: color-mix(in srgb, var(--accent) 85%, var(--text));
+}

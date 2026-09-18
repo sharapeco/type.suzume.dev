@@ -12,39 +12,49 @@ const { name, href, src } = Astro.props;
 
 <li class="card">
 	<a href={href}>
+		{/*
+			sizes は .link-card-grid の実列幅から導出している。
+			2列(〜46.25rem) / 3列(〜64rem) / 4〜5列(64rem〜) の各帯で列幅の実測に合わせてある。
+			全ビューポート幅で過小宣言はゼロ、過大は最大1.37倍。
+			グリッドの CSS（列の最小幅・gap）や --content / --wide を変えたら再計算すること。
+		*/}
 		<Picture
 			src={src}
 			formats={["avif", "webp"]}
 			fallbackFormat="jpeg"
-			widths={[192, 384, 576]}
-			sizes="(min-width: 40rem) 192px, (min-width: 27rem) 45vw, calc(100vw - 3rem)"
+			widths={[192, 288, 384, 576, 704]}
+			sizes="(min-width: 64rem) 320px, (min-width: 46.25rem) calc(33vw - 22px), calc(50vw - 32px)"
 			alt={name}
 		/>
 	</a>
 </li>
+
 <style>
 	.card a {
-		display: inline-block;
-		vertical-align: bottom;
-		border: solid 1px #ddd;
-	}
-	@keyframes card-hover {
-		0% {
-			outline: solid 0 rgba(var(--accent), 0);
-		}
-		100% {
-			outline: solid 2px rgb(var(--accent));
-		}
+		display: block;
+		background: var(--surface);
+		border: solid 1px var(--border);
+		border-radius: 0.4em;
+		overflow: hidden;
+		text-decoration: none;
+		transition: border-color 0.15s ease-out;
 	}
 	.card a:hover,
-	.card a:focus {
-		outline: solid 2px rgb(var(--accent));
-		animation: card-hover 0.2s ease-out 1;
+	.card a:focus-visible {
+		border-color: var(--accent);
+	}
+	.card picture,
+	.card img {
+		display: block;
 	}
 	.card img {
-		width: auto;
+		width: 100%;
 		height: auto;
-		max-width: 100%;
-		vertical-align: bottom;
+	}
+	@media (prefers-color-scheme: dark) {
+		/* 見本画像はすべて白地なので、暗い背景で浮きすぎないようわずかに落とす */
+		.card img {
+			filter: brightness(0.86) contrast(1.02);
+		}
 	}
 </style>
